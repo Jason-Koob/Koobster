@@ -1,0 +1,38 @@
+html{
+    height:flex;
+    background: #232323;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255)
+}
+
+
+ul{
+    width:max-content;
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+li a{
+    align-items: center;
+    display:inline-block;
+    text-align: center;
+    color: rgb(56, 158, 56);
+    padding: 8px 4px;
+    background-color: rgb(0, 0, 0)
+
+}
+li a:hover{
+    background: linear-gradient(180deg, #282828 50%, #717171 100%, #c3c3c3 70%)
+}
+
+h1{
+    text-indent: 5%;
+}
+p{
+    text-indent: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
