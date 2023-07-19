@@ -1,9 +1,8 @@
 html{
     background: #232323;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
 }
-
 
 ul{
     width:max-content;
@@ -11,9 +10,11 @@ ul{
     padding: 0;
     list-style-type: none;
 }
+
 li{
     float: left;
 }
+
 li a{
     align-items: stretch;
     display:inline-block;
@@ -22,10 +23,10 @@ li a{
     color: rgb(56, 158, 56);
     padding: 20px 40px;
     background-color: rgb(0, 0, 0);
-
 }
+
 li a:hover{
-    background: linear-gradient(180deg, #282828 50%, #717171 100%, #c3c3c3 70%)
+    background: linear-gradient(180deg, #282828 50%, #717171 100%, #c3c3c3 70%);
 }
 
 h1{
@@ -34,14 +35,17 @@ h1{
     margin: 50px 50px 50px 50px;
     align-content: center;
 }
+
 h2{
     text-indent: 10%;
     line-height: 55px;
     margin: 50px 50px 50px 50px;
     align-content: center;
 }
+
 p{
     line-height: 55px;
+    margin: 50px 50px 50px 50px;
     font-size: larger;
     margin-left: 15%;
     margin-right: 15%;
