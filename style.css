@@ -1,9 +1,7 @@
 html{
-    height:flex;
     background: #232323;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255);
-    line-height: 55px;
+    color: rgb(255, 255, 255)
 }
 
 
@@ -27,15 +25,17 @@ li a{
 
 }
 li a:hover{
-    background: linear-gradient(180deg, #282828 50%, #717171 100%, #c3c3c3 70%);
+    background: linear-gradient(180deg, #282828 50%, #717171 100%, #c3c3c3 70%)
 }
 
 h1{
     text-indent: 5%;
+    line-height: 55px;
     margin: 50px 50px 50px 50px;
     align-content: center;
 }
 p{
+    line-height: 55px;
     font-size: larger;
     margin-left: 15%;
     margin-right: 15%;
