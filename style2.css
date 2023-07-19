@@ -55,6 +55,16 @@ html{
     font-family: Arial;
 }
 
+/* THIS KEEPS THE NAV BAR AT THE TOP OF THE SCREEN */
+
+#topscreen {
+  position:fixed;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 /* THIS IS FOR THE NAV BAR DROP DOWN */
 
  /* Navbar container */
@@ -91,18 +101,20 @@ html{
     background-color: rgb(83, 83, 83);
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+    width: 116px;
   }
   
-  /* Add a red background color to navbar links on hover */
+  /* Add a background color to navbar links on hover */
   .navbar a:hover, .dropdown:hover .dropbutton {
     background-color: rgb(37, 37, 37);
+    transition: .5s;
   }
   
   /* Dropdown content (hidden by default) */
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #878787;
+    background-color: rgb(83, 83, 83);
     box-shadow: 0px 8px 16px 0px rgba(97, 97, 97, 0.2);
     z-index: 1;
   }
@@ -110,17 +122,17 @@ html{
   /* Links inside the dropdown */
   .dropdown-content a {
     float: none;
-    color: black;
+    color: white;
     padding: 12px 20px;
     text-decoration: none;
     display: block;
     text-align: left;
-    padding: 12px 19px;
+    padding: 12px;
   }
   
   /* Add a grey background color to dropdown links on hover */
   .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: rgb(37, 37, 37);
   }
   
   /* Show the dropdown menu on hover */
