@@ -157,6 +157,10 @@ li a{
     width: 183px;
 }
 
+.mail {
+  color: white;
+}
+
 li a:hover{
     background: #1a1a1a 100%;
     color:white;
