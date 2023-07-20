@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Ua-Compatible" content="ie=edge">
+    <title>Python | Koobster.net</title>
+    <link rel="stylesheet" href="style2.css">
+    <header>
+        <title>Koobster</title>
+    </header>
+    <body>
+        <nav id="topscreen">
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="personal.html">Personal</a>
+                <div class="dropdown">
+                    <button class="dropbutton">
+                        <u>Games</u>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="minecraft.html">Minecraft</a>
+                        <a href="csgo.html">CS:GO</a>
+                        <a href="terraria.html">Terraria</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbutton">
+                        <u>Projects</u>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="html.html">HTML/CSS</a>
+                        <a href="js.html">JavaScript</a>
+                        <a href="java.html">Java</a>
+                        <a href="python.html">Python</a>
+                        <a href="c++.html">C++</a>
+                        <a href="docker.html">Docker</a>
+                    </div>
+                </div>
+                <a href="certs.html">Certifications</a>
+                <a href="academics.html">Academics</a>
+
+            </div>
+        </nav>
+        <h1>Python  Projects</h1>
+        <h2>My Python Experience</h2>
+        <p>
+            I've written the most in python out of any other langauge. I enjoy how simple python is to
+            understand and how I can apply my python knowledge to common issues I have. At the moment
+            python is my favorite language but i'm sure there are better alternatives to it like Rust
+            or Go.
+        </p>
+        <h2>My Python Timer</h2>
+        <p>
+            I wrote a python script to remind me every second. It's basically a standard timer, but I 
+            wanted to make it myself, without much external help. Firstly I needed to get the current 
+            time and the desired time. I looked for the only major python library I would need for this 
+            project. It is called
+            <a href="https://docs.python.org/3/library/datetime.html" target="_blank" rel="noopener noreferrer">datetime</a>. 
+            I used this library to get the current time and find the difference between desired time
+            and the current time.I got the current time by using <code>datetime.datetime.now()</code>
+            I quickly realized I needed to get a format of time to convert the current and the standard
+            times to work together through the library. So I wrote a function to ask the user for their 
+            desired time, asking them to use the <code>'%Y-%m-%d %H:%M:%S'</code> format. I then combined
+            their input with a format so the library could comprehendtheir answer as a time instead of a 
+            string of gobbledygook. Now all that was left was to make the actual timer. I found out how to 
+            do that with a minimal amountof research online. I got the formatted current time using this:
+        </p>
+        <p>
+            <code class="comment"># Get the current time</code><br>
+            <code>current_time = datetime.datetime.now()</code><br>
+            <code>date_format = '%Y-%m-%d %H:%M:%S'</code><br>
+            <code>formatted_current_time = current_time.strftime('%Y-%m-%d %H:%M:%S')</code><br><br>
+            <code class="comment"># Define and format the expected time</code><br>
+            <code>formatted_expected_time = current_time.strftime('%Y-%m-%d %H:%M:%S')</code>
+        </p>
+        <p>
+            I then compared the two formatted times by making a variable consisting of <code>formatted_current_time</code>
+            and <code>formatted_expected_time</code> as strings. I used this string formatted variable to
+            combine the string and the date format to each time.
+        </p>
+        <p>
+            <code class="comment"># Comparing current time with expected time</code><br>
+            <code>current_time_string = str(formatted_current_time)<br>
+                math_current_time = datetime.datetime.strptime(current_time_string, date_format)<br>
+                math_expected_time = datetime.datetime.strptime(expected_time_string, date_format)<br><br>
+                difference_time = math_expected_time - math_current_time<br>
+                formatted_difference_time = difference_time</code><br><br>
+            <code class="comment"># Tell user the difference</code><br>
+            <code>print(difference_time)<br>
+                time.sleep(1)</code>
+        </p>
+        <p>
+            I used a while loop that re-acquired the current time every second thanks to the
+            <a href="https://docs.python.org/3/library/time.html" target="_blank" rel="noopener noreferrer">time</a>
+            python library I also used. this library was really only used to wait an amount of time before
+            re-acquiring the current time. Then the 
+            <a href="https://docs.python.org/3/library/datetime.html" target="_blank" rel="noopener noreferrer">datetime</a>
+            library would subtract the current time from the current time and print the difference:
+        </p>
+        <h2>My Python Key-logger</h2>
+        <p>
+            I thought it would be a cool little project to write a key logger in python. After all, I'm
+            studying cyber security and am interested in stuff like this. The first thing I did was
+            find some libraries to use. I found was called
+            <a href="https://pypi.org/project/pynput/" target="_blank" rel="noopener noreferrer">pynput</a>.
+            This library lets me record the keyboard input regardless of if the python application is selected.
+            In this project, I reused the 
+            <a href="https://docs.python.org/3/library/time.html" target="_blank" rel="noopener noreferrer">time python library</a>
+             to log the time of an input.
+        </p>
+        <p>
+            At this point, I had a way to record the inputs and get the time of the input, but I still
+            needed to log the inputs to a file. This means that I started using the built-in 
+            <a href="https://docs.python.org/3/library/functions.html#open" target="_blank" rel="noopener noreferrer">built-in open function</a>.
+            This function allowed me to read, write, and overwrite data from files. This is the
+            majority of the key-logger:
+        </p>
+        <p>
+            <code class="comment"># This records the keystrokes</code><br>
+            <code>with pynput.keyboard.Listener(on_press=on_press) as listener:<br>
+                listener.join()</code><br><br>
+
+            <code class="comment"># This writes the recorded text to a file</code><br>
+            <code>with open('records.txt', 'a') as docWrite:<br>
+                docWrite.write(localTime + key + '\n')</code>
+        </p>
+        <h2>My DnD Dungeon Generator</h2>
+        <p>
+            I play Dungeons and Dragons with friends on occasion. Sometimes I find myself lacking creatively
+            to think of a dungeon design. So, I made some lists of options like room width/depth, hallway width/depth
+            door types, enemy types and a few other options. I imported the
+            <a href="https://docs.python.org/3/library/random.html" target="_blank" rel="noopener noreferrer">random python library</a>
+             to choose an option from a select list and I added an option to choose one item from each list.
+            This project didn't take me very long but it is still fun to use it from time to time and think of how the 
+            dungeon would be to use in DnD.
+        </p>
+        <p>
+            <code class="comment"># Some of the options for my lists of possible items</code><br>
+            <code>Trap = ["floor Spikes", "arrows From Wall", "mimic Chest", "falling Floor Tiles", "puzzle", "dart Door", "rats"]<br>
+                Door = ["wooden", "stone", "iron", "fake Door", "painting Door"]<br>
+                EnemyType = ["zombie", "skeleton", "spider", "rat", "elemental", "vampire", "draugr", "ghost"]</code><br><br>
+            <code class="comment"># An example of using the random library</code><br>
+            <code>respChoice = input()<br>
+                if respChoice == "5":<br>
+                print("The trap is: " + random.choice(Trap))</code><br>
+        </p>
+        <p>
+            After making my own python program for this very common issue, I searched online and found out someone
+            already made a
+            <a href="https://donjon.bin.sh/5e/dungeon/index.cgi" target="_blank" rel="noopener noreferrer">Random Dungeon Generator</a>,
+             which has more functionality than mine. This project
+            was still fun to do because I got to use some new libraries and get some more experience working with python.
+        </p>
+        <h2>Blackjack Card Game Emulator</h2>
+        <p>
+            I expected this project to be finished very quickly because I thought I knew how to play the 'simple card game'
+            known as blackjack. I thought all you had to do was get cards with a value of 17 and not 21 and hope you win.
+            I was mostly correct in thinking that, except I forgot how to make things simple when writing code.
+        </p>
+        <p>
+            I once again used the 
+            <a href="https://docs.python.org/3/library/random.html" target="_blank" rel="noopener noreferrer">random python library</a>
+            to randomly choose an item from a list. This time I needed to add the randomly choosen item to another list and assign
+            a value to each item in this second list, then combine the values of this second list for a variety of values as shown 
+            here:
+        </p>
+        <p>
+            <code class="comment"># Converting face card into a usable value for comparing them to numeric cards</code><br>
+            <code>    for i in uCards:<br>
+                if i == 'J':<br>
+                    uValue = int(uValue) + 10<br>
+                elif i == 'K':<br>
+                    uValue = int(uValue) + 10<br>
+                elif i == 'Q':<br>
+                    uValue = int(uValue) + 10<br>
+                elif i == 'A':<br>
+                    uValue = int(uValue) + 11<br>
+                else:<br>
+                    uValue = int(i) + uValue</code><br><br>
+        
+            <code class="comment"># Aces are special because they are worth 11 and 1 in different circumstances</code><br>
+                <code>for i in uCards:<br>
+                if uValue > 21 and i == 'A':<br>
+                    uValue = int(uValue) - 10</code>
+        </p>
+        <p>
+            I did this twice, once for the user and again for the dealer. I had to re-learn how to play blackjack. Upon doing so, I revised
+            my code and copied over some of my functions. I then revised my code again in a now third attempt at making Blackjack
+            in python. I told one of my friends about me making Blackjack and he joined in and helped me remember how to play the game.
+            Thanks Jack.
+        </p>
+        <p>
+            I finally got all of the issues sorted out and got a working budgetting system in place that reads and writes
+            data from a file and allows the user to bet an amount of lesser or equal value from the value in the file. This function
+            took some time but is well worth it. Now it feels like I'm actually losing something when I lose instead of just retrying.
+            This project took me a few days and is well worth the effort put into it.
+        </p>
+    </body>
+    <footer>
+        <div>This site is owned and managed by <a href="mailto:ja735735@gmail.com" class="mail" target="_blank" rel="noopener noreferrer">Jason Spears</a></div>
+    </footer>
+</html>
