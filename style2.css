@@ -201,3 +201,10 @@ footer{
 .comment{
   color: #6A9955;
 }
+
+.img_project{
+  display: block;
+  margin-left: 35%;
+  margin-right: 55%;
+  width: 30%;
+}
