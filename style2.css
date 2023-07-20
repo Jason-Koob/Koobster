@@ -122,7 +122,6 @@
       text-decoration: none;
       display: block;
       text-align: left;
-
     }
     
     /* Add a grey background color to dropdown links on hover */
@@ -134,7 +133,7 @@
     .dropdown:hover .dropdown-content {
       display: block;
     } 
-
+  
 ul{
     margin:0;
     padding: 0;
