@@ -54,7 +54,6 @@
 
   #topscreen {
     position:fixed;
-    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -170,7 +169,7 @@ h1{
     line-height: 5;
     margin: 50px 50px 50px 50px;
     align-content: center;
-    color: #58a8c1;
+    color: #2acdff;
 }
 
 h2{
@@ -196,6 +195,7 @@ footer{
   text-align: center;
   padding: 14px 16px;
   background-color: #333;
+  bottom: 0;
 }
 
 .comment{
@@ -206,5 +206,6 @@ footer{
   display: block;
   margin-left: 35%;
   margin-right: 55%;
+  margin-bottom:10%;
   width: 30%;
 }
